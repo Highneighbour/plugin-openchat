@@ -224,7 +224,7 @@ async function handleHelpCommand(
 ${character.bio?.[0] || "I'm an AI agent powered by ElizaOS"}
 
 **How to Use:**
-Simply use the /chat command followed by your message, or send me a direct message!`;
+Use the /chat command followed by your message, or mention me in a group chat!`;
 
     const message = (await client.createTextMessage(helpText)).setFinalised(true);
     res.status(200).json(success(message));
@@ -256,8 +256,7 @@ ${character.bio?.[0] || "I'm an AI agent powered by ElizaOS"}
 **Capabilities:**
 • Intelligent conversation
 • Context-aware responses
-• Memory of past interactions
-• Task execution
+• Autonomous messaging
 
 Powered by ElizaOS 🚀`;
 
@@ -265,6 +264,8 @@ Powered by ElizaOS 🚀`;
     res.status(200).json(success(message));
     await client.sendMessage(message);
 }
+
+// Moderate command removed - not needed
 
 /**
  * Main command execution handler
