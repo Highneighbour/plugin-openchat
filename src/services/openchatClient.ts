@@ -139,12 +139,12 @@ export class OpenChatClientService {
      */
     public recordInstallation(
         scopeKey: string,
-        scope: OpenChatScope,
-        permissions: string[]
+        location: any,
+        record: any
     ): void {
-        this.installations.set(scopeKey, { scope, permissions });
+        this.installations.set(scopeKey, { scope: location as any, permissions: record });
         this.runtime.logger.info(
-            `Bot installed in ${scope.kind}: ${scope.chatId} with ${permissions.length} permissions`
+            `Bot installed in location: ${scopeKey}`
         );
     }
 
